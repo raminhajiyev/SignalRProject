@@ -20,16 +20,19 @@ namespace SignalR.DataAccessLayer.Repository
         public void Add(T entity)
         {
             _context.Add(entity);
+            _context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            _context.Remove(entity);
+            _context.Remove(entity); 
+            _context.SaveChanges();
         }
 
         public List<T> GetAll()
         {
             return _context.Set<T>().ToList();
+
         }
 
         public T GetById(int id)
@@ -40,6 +43,7 @@ namespace SignalR.DataAccessLayer.Repository
         public void Update(T entity)
         {
             _context.Update(entity);
+            _context.SaveChanges();
         }
     }
 }

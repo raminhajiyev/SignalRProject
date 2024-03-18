@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-    public class SocialMediaDal : ISocialMediaService
+    public class SocialMediaManager : ISocialMediaService
     {
         private readonly ISocialMediaDal _socialMediaDal;
 
-        public SocialMediaDal(ISocialMediaDal socialMediaDal)
+        public SocialMediaManager(ISocialMediaDal socialMediaDal)
         {
             _socialMediaDal = socialMediaDal;
         }

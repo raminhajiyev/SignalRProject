@@ -35,7 +35,7 @@ namespace SignalR.BusinessLayer.Concrete
 
         public List<Discount> TGetListAll()
         {
-           _discountDal.GetAll();
+            return _discountDal.GetAll();
         }
 
         public void TUpdate(Discount entity)
