@@ -23,6 +23,8 @@
 								<th scope="col">#</th>
 								<th scope="col">Category name</th>
 								<th scope="col">Status</th>
+								<th scope="col">Delete</th>
+								<th scope="col">Update</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -34,6 +36,8 @@
 									<td>@count</td>
 									<td>@item.CategoryName</td>
 									<td>@item.CategoryStatus</td>
+									<td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Delete</a></td>
+									<td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Update</a></td>
 								</tr>
 							}
 						</tbody>
