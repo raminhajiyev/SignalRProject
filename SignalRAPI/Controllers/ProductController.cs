@@ -32,13 +32,14 @@ namespace SignalRAPI.Controllers
             var context = new Context();
             var values = context.Products.Include(x=>x.Category).Select(p => new ResultProductWithCategory
             {
-
+                ProductId=p.ProductId,
                 ProductName = p.ProductName,
                 Description = p.Description,
                 Price = p.Price,
                 ImageUrl = p.ImageUrl,
                 ProductStatus = p.ProductStatus,
                 CategoryName = p.Category.CategoryName
+
             });
             return Ok(values.ToList());
         }
@@ -51,7 +52,8 @@ namespace SignalRAPI.Controllers
                ImageUrl= createProductDto.ImageUrl,
                Price = createProductDto.Price,
                ProductName = createProductDto.ProductName,
-               ProductStatus = createProductDto.ProductStatus
+               ProductStatus = createProductDto.ProductStatus,
+               CategoryId=createProductDto.CategoryId
             };
             _productService.TAdd(product);
             return Ok("Data has been successfully added");
@@ -69,6 +71,7 @@ namespace SignalRAPI.Controllers
             Product product = new Product()
             {
                 ProductId= updateProductDto.ProductId,
+                CategoryId = updateProductDto.CategoryId,
                 Description = updateProductDto.Description,
                 ImageUrl = updateProductDto.ImageUrl,
                 Price = updateProductDto.Price,
