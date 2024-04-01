@@ -49,7 +49,7 @@ namespace SignalRAPI.Controllers
         [HttpPut]
         public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
         {
-            _aboutService.TAdd(new About()
+            _aboutService.TUpdate(new About()
             {
                 AboutId = updateAboutDto.AboutId,
                 ImageUrl = updateAboutDto.ImageUrl,

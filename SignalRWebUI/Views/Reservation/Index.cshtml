@@ -1,0 +1,56 @@
+﻿@model List<SignalRWebUI.DTOs.ReservationDto.ResultReservationDto>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
+}
+
+<div class="container-fluid">
+	<h4 class="page-title">Tables</h4>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title">Reservation Table</div>
+				</div>
+				<div class="card-body">
+					<div class="card-sub">
+						Available Products
+					</div>
+					<table class="table mt-3">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Fullname</th>
+								<th scope="col">Phone</th>
+								<th scope="col">Email</th>
+								<th scope="col">Person</th>
+								<th scope="col">Date</th>
+								<th scope="col">Delete</th>
+								<th scope="col">Update</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							@foreach (var item in Model)
+							{
+								count++;
+								<tr>
+									<td>@count</td>
+									<td>@item.Fullname</td>
+									<td>@item.Phone</td>
+									<td>@item.Mail</td>
+									<td>@item.PersonCount</td>
+									<td>@item.Date</td>
+									<td><a href="/Reservation/DeleteReservation/@item.ReservationId" class="btn btn-danger">Delete</a></td>
+									<td><a href="/Reservation/UpdateReservation/@item.ReservationId" class="btn btn-success">Update</a></td>
+								</tr>
+							}
+						</tbody>
+					</table>
+					<a href="/Reservation/CreateReservation/" class="btn btn-primary">Add Product</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

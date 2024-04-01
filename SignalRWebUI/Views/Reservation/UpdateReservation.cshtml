@@ -1,0 +1,59 @@
+﻿@model SignalRWebUI.DTOs.ReservationDto.UpdateReservationDto
+
+@{
+    ViewData["Title"] = "UpdateReservation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <h4 class="page-title">Forms</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Edit Product</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" id="id" asp-for="ReservationId">
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryname">Fullname</label>
+                                <input type="text" class="form-control" id="Fullname" asp-for="Fullname">
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="categoryname">Phone</label>
+                                    <input type="text" class="form-control" id="Phone" asp-for="Phone">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="categoryname">Mail</label>
+                                    <input type="email" class="form-control" id="Mail" asp-for="Mail">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="categoryname">People</label>
+                                    <input type="text" class="form-control" id="PersonCount" asp-for="PersonCount">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="categoryname">Date</label>
+                                    <input type="date" class="form-control" id="PersonCount" asp-for="Date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Add</button>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
