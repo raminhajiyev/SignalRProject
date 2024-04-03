@@ -1,0 +1,53 @@
+﻿@model List<SignalRWebUI.DTOs.DiscountDto.ResultDiscountDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid">
+    <h4 class="page-title">Tables</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Discount Table</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-sub">
+                        Available Discounts
+                    </div>
+                    <table class="table mt-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td><img src="@item.ImageUrl" height="50" width="50" />@item.Title</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Amount</td>
+                                    <td><a href="/Discount/DeleteDiscount/@item.DiscountId" class="btn btn-danger">Delete</a></td>
+                                    <td><a href="/Discount/UpdateDiscount/@item.DiscountId" class="btn btn-success">Update</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a href="/Discount/CreateDiscount/" class="btn btn-primary">Add About</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
