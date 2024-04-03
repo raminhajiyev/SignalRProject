@@ -23,8 +23,8 @@ builder.Services.AddScoped<ICategoryDal, EFCategoryDal>();
 builder.Services.AddScoped<IContactService, ContactManager>();
 builder.Services.AddScoped<IContactDal, EFContactDal>();
 
-builder.Services.AddScoped<IContactService, ContactManager>();
-builder.Services.AddScoped<IContactDal, EFContactDal>();
+builder.Services.AddScoped<IDiscountService, DiscountManager>();
+builder.Services.AddScoped<IDiscountDal, EFDiscountDal>();
 
 builder.Services.AddScoped<IHighlightService, HighlightManager>();
 builder.Services.AddScoped<IHighlightDal, EFHighlightDal>();
